@@ -19,11 +19,11 @@ let selectedOption = "Burguers";
 
 // Renderizar la pagina a partir de data
 render = () => {
+  let mainDiv = document.getElementById("mainOptionDiv");
+  mainDiv.innerHTML = "";
   data
     .find((option) => option.name === selectedOption)
     .products.forEach((item) => {
-      console.log(item);
-      let mainDiv = document.getElementById("mainOptionDiv");
       mainDiv.innerHTML += `<div class='col-3'> \
     <div class='card' style='width: 18rem'>\
       <img src='${item.image}' class='card-img-top' alt='' />\
