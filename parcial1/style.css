@@ -1,0 +1,46 @@
+.carritoIcon {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.brandNavbar {
+  font-family: "Rochester", cursive;
+  font-size: 48px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.menuOptions {
+  background-color: #333a40;
+}
+
+.menuOptions a {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.mainOptionMenuContainer {
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+
+.addToCart {
+  background-color: #f2a950;
+  color: black;
+}
+
+.footer {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+li .nav-link {
+  color: white !important;
+}
