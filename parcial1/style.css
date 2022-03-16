@@ -3,26 +3,152 @@
   max-height: 80px;
 }
 
-.brandNavbar {
+.brandNavbar a {
   font-family: "Rochester", cursive;
   font-size: 48px;
+  color: black;
+}
+.brandNavbar a:hover {
+  text-decoration: none;
+}
+
+.logoRow {
+  padding-top: 50px;
+  padding-left: 42px;
+  padding-right: 42px;
+}
+
+.totalDiv h5 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+.btnCheckout {
+  background-color: #708c32;
+}
+
+.navbar-toggler-icon img {
+  max-width: 25px;
+}
+
+.btnCancel {
+  background-color: #8c162c;
+  margin-right: 3px;
+}
+
+.modal-body {
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+}
+
+.modal-title {
+  font-weight: 400;
+  font-size: 48px;
+  font-family: "Roboto", sans-serif;
+}
+
+.modal-header {
+  border-bottom: 1px solid black;
+}
+
+.modal-footer {
+  border-top: 1px solid black;
+}
+div.modal-content {
+  border-radius: 0;
+  border: 1px solid black;
+}
+.btnOrder {
+  color: white;
+  border-radius: 0px;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 48px;
+  border: 1px solid black;
+}
+.btnModify {
+  background-color: #ffc107;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.bannerPostHR {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: black;
+  height: 1px;
+}
+
+img.optionPhoto {
+  width: 175px;
+  height: 130px;
+  object-fit: cover;
+}
+
+div.menuItems {
+  max-width: 262px;
+  border-radius: 0;
+}
+
+.banner {
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 0;
+}
+
+main {
+  padding-bottom: 100px;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .menuOptions {
   background-color: #333a40;
 }
 
-.menuOptions a {
+.menuOptions a.nav-item {
   color: #fff;
   font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  padding: 27px 0px 27px 0px;
+  margin: 0px 30px 0px 30px;
+}
+.bannerHR {
+  margin-top: 0;
+  margin-bottom: 20px;
+  background-color: black;
+  height: 1px;
 }
 
+.menuOptions a.nav-item.active {
+  text-decoration: underline;
+  color: white;
+  font-weight: 800;
+}
+
+.menuOptions a.nav-item:hover {
+  text-decoration: underline;
+  color: white;
+}
 .mainOptionMenuContainer {
   border-bottom: 1px solid black;
   text-align: center;
@@ -30,17 +156,161 @@ body {
   margin-bottom: 10px;
 }
 
+.mainOptionMenu {
+  font-weight: 700;
+}
+
 .addToCart {
   background-color: #f2a950;
   color: black;
+  border-radius: 0;
+  border: 1px solid #cccccc;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
 }
 
 .footer {
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
 }
 
 li .nav-link {
   color: white !important;
+}
+
+.navbar .collapse {
+  visibility: hidden;
+  display: block;
+}
+
+.navbar .collapse.show {
+  visibility: visible;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav .nav-link.active {
+    visibility: visible;
+  }
+
+  .collapsing {
+    transition: all 0.35s ease;
+    height: 40px !important;
+  }
+
+  .collapse:not(.show) .navbar-nav .nav-item:not(.active) {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar .collapse .navbar-nav .nav-item {
+    visibility: visible;
+  }
+}
+
+#cantCarr {
+  margin-top: 16px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.card-text.price {
+  font-weight: bold;
+}
+
+.card-text.description {
+  font-weight: 300;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+}
+
+.modal-backdrop {
+  opacity: 0 !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .menuOptions {
+    background-color: #fdcd55;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding: 0;
+  }
+  .menuOptions a.nav-item.active {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menuOptions a.nav-item {
+    color: black;
+
+    margin-bottom: 7px;
+    margin-top: 7px;
+    padding: 0px 0px 0px 0px;
+    font-weight: 18px;
+  }
+
+  .menuOptions a.nav-item:hover {
+    color: black;
+  }
+
+  table.table-striped {
+    border: 1px solid black;
+    background-color: rgba(196, 196, 196, 0.34);
+  }
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(196, 196, 196, 0);
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr td:nth-of-type(1) {
+    display: none;
+  }
+  tr td:nth-of-type(4) {
+    display: none;
+  }
+  tr td:nth-of-type(5) {
+    display: none;
+  }
+  .logoRow {
+    padding: 0;
+  }
+  .modal-dialog {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  div.modal-content {
+    height: auto;
+    margin-top: 100px;
+    border: 1px solid grey;
+    width: 80%;
+  }
+
+  .modal-header {
+    border-bottom: 0 none;
+  }
+
+  .modal-footer {
+    border-top: 0 none;
+  }
+
+  .modal-footer .btnOrder {
+    font-size: 14px;
+  }
+  .modal-backdrop {
+    background: linear-gradient(0deg, white 82%, rgba(0, 0, 0, 0) 20%);
+    opacity: 1 !important;
+  }
 }

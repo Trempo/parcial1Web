@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Restaurant & Lounge</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/cheeseburger.ico"
+      type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,50 +25,134 @@
     />
   </head>
   <body>
-    <div class="d-flex justify-content-between">
-      <h1 class="brandNavbar">Restaurant & Lounge</h1>
-      <a><img src="assets/image 1.png" class="carritoIcon" alt="Carrito" /></a>
-      <p id="cantCarr"></p>
-    </div>
-    <div class="jumbotron jumbotron-fluid p-0">
-      <img
-        src="assets/unsplash_LV2p9Utbkbw.png"
-        alt="imagenJumbotronBurger"
-        class="w-100 imagenJumbotronBurger"
-      />
-    </div>
-    <nav class="navbar navbar-expand-lg menuOptions">
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" onclick="renderOption('Burguer')">
-              >Burger <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onclick="renderOption('Tacos')">Tacos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onclick="renderOption('Salads')">Salads</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onclick="renderOption('Desserts')">Desserts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onclick="renderOption('Drinks and Slides')"
-              >Drinks & Slides</a
-            >
-          </li>
-        </ul>
+    <main>
+      <div class="row flex-column-reverse flex-md-row logoRow">
+        <div class="col-12 col-md-10">
+          <h1 class="brandNavbar"><a href="#">Restaurant & Lounge</a></h1>
+        </div>
+        <div class="col-12 col-md-2">
+          <div class="d-flex justify-content-end">
+            <a onclick="renderCart()"
+              ><img src="assets/image 1.png" class="carritoIcon" alt="Carrito"
+            /></a>
+            <p id="cantCarr">0 items</p>
+          </div>
+        </div>
       </div>
-    </nav>
-    <div class="container">
-      <div class="mainOptionMenuContainer">
-        <h2 class="mainOptionMenu">Burgers</h2>
+      <hr class="bannerHR" />
+      <div class="jumbotron jumbotron-fluid p-0 mb-0">
+        <img
+          src="assets/unsplash_LV2p9Utbkbw.png"
+          alt="imagenJumbotronBurger"
+          class="w-100 imagenJumbotronBurger"
+        />
+      </div>
+      <hr class="bannerPostHR" />
+
+      <nav class="navbar navbar-expand-md menuOptions">
+        <div class="collapse" id="navbar1">
+          <div class="navbar-nav flex-md-row align-middle">
+            <a
+              class="nav-item nav-link active"
+              onclick="renderOption('Burguers')"
+              id="Burguers"
+              >Burgers</a
+            >
+            <a
+              class="nav-item nav-link"
+              onclick="renderOption('Tacos')"
+              id="Tacos"
+              >Tacos</a
+            >
+            <a
+              class="nav-item nav-link"
+              onclick="renderOption('Salads')"
+              id="Salads"
+              >Salads</a
+            >
+            <a
+              class="nav-item nav-link"
+              onclick="renderOption('Desserts')"
+              id="Desserts"
+              >Desserts</a
+            >
+            <a
+              class="nav-item nav-link"
+              onclick="renderOption('Drinks and Sides')"
+              id="Drinks and Sides"
+              >Drinks & Sides</a
+            >
+          </div>
+        </div>
+        <button
+          class="navbar-toggler align-self-start"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar1"
+        >
+          <span class="navbar-toggler-icon"
+            ><img src="assets/Arrow 1.png" alt="Flecha toggler"
+          /></span>
+        </button>
+      </nav>
+      <div class="container">
+        <div class="mainOptionMenuContainer">
+          <h2 class="mainOptionMenu"></h2>
+        </div>
+
+        <div
+          class="d-flex flex-wrap align-items-stretch"
+          id="mainOptionDiv"
+        ></div>
       </div>
 
-      <div class="d-flex flex-wrap" id="mainOptionDiv"></div>
-    </div>
+      <!-- Modal -->
+      <div class="">
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-dialog-centered modal-lg"
+            role="document"
+          >
+            <div class="modal-content p-3">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">
+                  Cancel the order
+                </h5>
+              </div>
+              <div class="modal-body">
+                Are you sure about cancelling the order?
+              </div>
+              <div class="modal-footer">
+                <div class="d-flex align-items-end flex-column pb-5 pt-5">
+                  <button
+                    type="button"
+                    class="btnOrder btnCheckout"
+                    data-dismiss="modal"
+                    onclick="cancelOrder()"
+                  >
+                    Yes, I want to cancel the order
+                  </button>
+                  <button
+                    type="button"
+                    class="btnOrder btnCancel mt-3"
+                    data-dismiss="modal"
+                  >
+                    No, I want to continue adding products
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer class="footer mt-auto py-3">
       Contact us: +57 3102171020 - info@restaurant.com - @restaurant
     </footer>
